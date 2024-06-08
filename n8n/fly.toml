@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for electionpocn8n on 2024-06-06T20:28:08Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'electionpocn8n'
+primary_region = 'ams'
+
+[build]
+
+[http_service]
+  internal_port = 5678
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '4gb'
+  cpu_kind = 'shared'
+  cpus = 2
